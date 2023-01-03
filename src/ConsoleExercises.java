@@ -30,18 +30,25 @@ public class ConsoleExercises {
 //        System.out.printf("%nYou entered: --> \"" + userSentence + "\" <--");
 
         /////////////////// #4 ////////////////////////
+    //*****DOES NOT WORK WITH REST OF CODE UNCOMMENTED******//
 //        System.out.print("Enter a sentence: ");
 //        String userSentence = scanner.nextLine();
 //        System.out.printf("%nYou entered: --> \"" + userSentence + "\" <--");
 
 
         /////////////////// Exercise 3 #1 ////////////////////////
-        System.out.print("Enter the length of your room as an integer: ");
-        int length = scanner.nextLine();
-        System.out.print("Enter the width of your room as an integer: ");
-        int width = scanner.nextLine();
+        System.out.print("Enter the length of your room: ");
+        String userLength = scanner.nextLine();
+        int length = Integer.parseInt(userLength);
+        System.out.print("Enter the width of your room: ");
+        String userWidth = scanner.nextLine();
+        int width = Integer.parseInt(userWidth);
         int area = length * width;
-        System.out.printf("%nThe area of your room is: --> \"" + area + "\" <--");
+        System.out.printf("%nThe area of your room is: " + area);
+
+        /////////////////// Exercise 3 #2 ////////////////////////
+        int perimeter = (length * 2) + (width * 2);
+        System.out.printf("%nThe perimeter of your room is: " + perimeter);
 
     }
 }
