@@ -77,33 +77,48 @@ public class ControlFlowExercises {
 
 
     /////////////////// #3 ////////////////////////
-        System.out.println("What number would you like to go up to?");
-        int number = scanner.nextInt();
-        System.out.printf("number | squared | cubed %n------ | ------- | -----%n");
-        for(int i = 1; i <= number; i++){
-            System.out.printf(i + "      | "+ i*i + "       | " + i*i*i + " %n");
-        }
-
-
-    /////////////////// #4 ////////////////////////
-//        System.out.println("Enter a grade from 0-100");
-//        int grade = scanner.nextInt();
-//        String response = "y";
+//        boolean confirmation;
 //        do {
-//            if(grade >= 88){
-//                System.out.printf("Your letter grade would be an A.%n%n");
-//            } else if (grade >= 80) {
-//                System.out.printf("Your letter grade would be an B.%n%n");
-//            } else if (grade >= 67) {
-//                System.out.printf("Your letter grade would be an C.%n%n");
-//            } else if (grade >= 60) {
-//                System.out.printf("Your letter grade would be an D.%n%n");
-//            } else {
-//                System.out.printf("Your letter grade would be an F.%n%n");
+//            System.out.print("What number would you like to go up to? ");
+//            int number = scanner.nextInt();
+//            System.out.printf("number | squared | cubed %n------ | ------- | -----%n");
+//
+//            for(int i = 1; i <= number; i++){
+//                int square = i*i;
+//                int cubed = i*i*i;
+//
+//                System.out.printf("%-7d| %-8d| %-6d\n", i, square, cubed);
 //            }
-//            System.out.print("Would you like to check another grade? (y/n)");
-//            response = scanner.nextLine();
-//        }while (response.equalsIgnoreCase("y"));
+//
+//            System.out.print("Continue? [y/n]");
+//            String userInput = scanner.next();
+//            confirmation = userInput.equalsIgnoreCase("y");
+//        } while (confirmation);
+
+
+        /////////////////// #4 ////////////////////////
+        boolean confirmation;
+        do {
+            System.out.println("\nEnter a grade from 0-100");
+            int grade = scanner.nextInt();
+
+            if(grade >= 88){
+                System.out.printf("Your letter grade would be an A.%n%n");
+            } else if (grade >= 80) {
+                System.out.printf("Your letter grade would be an B.%n%n");
+            } else if (grade >= 67) {
+                System.out.printf("Your letter grade would be an C.%n%n");
+            } else if (grade >= 60) {
+                System.out.printf("Your letter grade would be an D.%n%n");
+            } else {
+                System.out.printf("Your letter grade would be an F.%n%n");
+            }
+
+            System.out.print("Would you like to check another grade? (y/n)");
+            String userInput = scanner.next();
+            confirmation = userInput.equalsIgnoreCase("y");
+        } while (confirmation);
+
 
     } //main close
 } //class close
