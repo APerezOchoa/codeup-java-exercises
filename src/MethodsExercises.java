@@ -31,30 +31,35 @@ public class MethodsExercises {
 
 
 ///////////////////////////#2/////////////////////////////////
-//////////////NOT SURE IF RIGHT QUESTION STRANGE//////////////
-//    public static int getInteger(int userInput) {
-//        if (userInput > 0 && userInput < 11){
-//            return userInput;
-//        } else {
-//            return 0;
+    // Got the method from David since I was unsure of this question
+//    public static int getInteger(int min, int max) {
+//        Scanner scan = new Scanner(System.in);
+//        System.out.println("Please enter a number between " + min + " and " + max);
+//        int userInput = scan.nextInt();
+//        if(userInput < min || userInput > max) {
+//            return getInteger(min, max);
 //        }
+//        return userInput;
 //    }
 
 
 ///////////////////////////#3/////////////////////////////////
-//    public static long factorial(int x){
-//        long totalFac = 1;
-//        for(int i = 1; i <= x; i++){
-//            totalFac *= i;
-//        }
-//        return totalFac;
-//    }
+    public static long factorial(int x){
+        long totalFac = 1;
+        for(int i = 1; i <= x; i++){
+            totalFac *= i;
+        }
+        return totalFac;
+    }
 
 
 ///////////////////////////#4/////////////////////////////////
-    public static double rollDice (int x){
-        return (int)(Math.random() * x) + 1;
-    }
+//    public static double rollDice (int x){
+//        return (int)(Math.random() * x) + 1;
+//    }
+
+
+///////////////////////////#5/////////////////////////////////
 
 
 
@@ -72,63 +77,52 @@ public class MethodsExercises {
 
 
         ////////////////////#2////////////////////////
-//////////////NOT SURE IF RIGHT QUESTION STRANGE//////////////
-//        boolean inputValid = false;
-//        do {
-//            System.out.print("Enter a number between 1 and 10: ");
-//            int userNum = scanner.nextInt();
-//            if (getInteger(userNum) == 0){
-//                inputValid = true;
-//                System.out.println("***Invalid entry. Please try again.***\n");
-//            } else {
-//                System.out.println("You entered " + getInteger(userNum));
-//                inputValid = false;
-//            }
-//        } while (inputValid);
+//        System.out.println(getInteger(1, 10));
 
 
         ////////////////////#3////////////////////////
-//////////////CANNOT GET THE USER TO INPUT TO CONTINUE /////////////////
-//        boolean confirmation = false;
-//        do {
-//            System.out.println("\nEnter a number between 1 and 10.");
-//            int facNumber = scanner.nextInt();
-//            if (facNumber > 0 && facNumber < 11){
-//                System.out.println(facNumber + "! = " +factorial(facNumber));
-//                System.out.print("\nWould you like to continue? [y/n]");
-//                String keepGoing = scanner.nextLine();
-//                if(keepGoing.equalsIgnoreCase("y")){
-//                    confirmation = true;
-//                }
-//            } else {
-//                System.out.println("***Invalid entry. Please try again.***\n");
-//            }
-//
-//        } while (confirmation);
+//////////////Need to show all factorials /////////////////
+        boolean confirmation = false;
+        do {
+            System.out.println("\nEnter a number between 1 and 10.");
+            int facNumber = scanner.nextInt();
+            if (facNumber > 0 && facNumber < 11){
+                for(int i = 1; i <= facNumber; i++){
+                    System.out.printf(i + "! = " + i + " " + factorial(i));
+                }
+                System.out.print("\nWould you like to continue? [y/n]");
+                scanner.nextLine();
+                String keepGoing = scanner.nextLine();
+                if(keepGoing.equalsIgnoreCase("y")){
+                    confirmation = true;
+                } else {
+                    confirmation = false;
+                }
+            } else {
+                System.out.println("***Invalid entry. Please try again.***\n");
+            }
+        } while (confirmation);
 
         ////////////////////#4////////////////////////
-        boolean roll = false;
-        System.out.print("How many sides do your dice have? ");
-        int sides = scanner.nextInt();
-        System.out.print("\nWould you like to roll the dice? [y/n] ");
-        String rollAgain = scanner.next();
+//////////////CANNOT GET THE USER TO INPUT TO CONTINUE /////////////////
+//        String rollAgain = "y";
+//        System.out.print("How many sides do your dice have? ");
+//        int sides = scanner.nextInt();
+//        System.out.print("\nWould you like to roll the dice? [y/n] ");
+//        scanner.nextLine();
+//        String roll = scanner.next();
+//        if(roll.equalsIgnoreCase("y")){
+//            do {
+//                int die1 = (int) rollDice(sides);
+//                int die2 = (int) rollDice(sides);
+//                System.out.printf("%nYou rolled a %d and a %d.%n%n", die1, die2);
+//                System.out.print("Would you like to roll again? [y/n] ");
+//                scanner.nextLine();
+//                rollAgain = scanner.nextLine();
+//            } while (rollAgain.equalsIgnoreCase("y"));
+//        }
+//        System.out.println("\n\nThank you for playing!");
 
-        do {
-            int die1 = (int) rollDice(sides);
-            int die2 = (int) rollDice(sides);
-            System.out.printf("%nYou rolled a %d and a %d.%n%n", die1, die2);
-            System.out.print("Would you like to roll again? [y/n] ");
-            rollAgain = scanner.nextLine();
-            if (rollAgain.equalsIgnoreCase("n")){
-                roll = false;
-            }
-        } while (roll);
-        System.out.println("\n\n\nThank you for playing!");
-
-
-    }
-
-
-
+    }//close main
 } //close class
 
