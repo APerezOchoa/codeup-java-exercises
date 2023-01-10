@@ -17,7 +17,7 @@ public class ArraysExercises {
             System.out.println(person.getName());
         }
     }
-    public static addPerson{
-
-    }
+//    public static addPerson{
+//
+//    }
 }
