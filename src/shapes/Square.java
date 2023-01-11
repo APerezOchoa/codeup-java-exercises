@@ -3,7 +3,7 @@ import java.lang.Math;
 
 public class Square extends Rectangle {
 
-    protected double side;
+    protected double side; //gotta make this to use w/ this.side
 
     public Square(double side) {
         super(side, side);
