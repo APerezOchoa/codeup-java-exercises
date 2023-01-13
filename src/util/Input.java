@@ -10,7 +10,7 @@ public class Input {
     }
 
     public String getString(){
-        System.out.println("Please input string: ");
+        //System.out.println("Please input string: ");
         return scanner.nextLine();
     }
     public String getString(String prompt){
@@ -27,34 +27,79 @@ public class Input {
         }
     }
 
+
+//    public int getInt(int min, int max) {
+//
+//    }
+//    public double getInt(){
+//        try {
+//            return Integer.valueOf(getString());
+//        } catch (NumberFormatException e){
+//            System.out.println("Does not work...");
+//            return 0;
+//        }
+//    }
+//    public double getDouble(double min, double max) {
+//
+//    }
+//    public double getDouble(){
+//
+//    }
+
+
+
+
     public int getInt(int min, int max) {
         System.out.println("Please enter a number between " + min + " and " + max);
-        int userInteger = scanner.nextInt();
-        if(userInteger < min || userInteger > max) {
+
+        try {
+            int userInteger = Integer.valueOf(getString());
+            //int userInteger = scanner.nextInt();
+            if(userInteger < min || userInteger > max) {
+                return getInt(min, max);
+            }
+            return userInteger;
+        } catch (NumberFormatException e){
             return getInt(min, max);
         }
-        return userInteger;
     }
 
-    public double getInt(){
+    public int getInt(){
         System.out.println("Please enter a number: ");
-        int userInput = scanner.nextInt();
-        return userInput;
+        try {
+            int userInput = Integer.valueOf(getString());
+            //int userInput = scanner.nextInt();
+            return userInput;
+        } catch (NumberFormatException e){
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
         System.out.println("Please enter a number between " + min + " and " + max);
-        double userDouble = scanner.nextDouble();
-        if(userDouble < min || userDouble > max) {
+
+        try {
+            double userDouble = Double.valueOf(getString());
+            //double userDouble = scanner.nextDouble();
+            if(userDouble < min || userDouble > max) {
+                return getDouble(min, max);
+            }
+            return userDouble;
+        } catch (NumberFormatException e){
             return getDouble(min, max);
         }
-        return userDouble;
     }
 
     public double getDouble(){
         System.out.println("Please enter a number: ");
-        double userInput = scanner.nextDouble();
-        return userInput;
+
+        try {
+            double userInput = Double.valueOf(getString());
+            //double userInput = scanner.nextDouble();
+            return userInput;
+        } catch (NumberFormatException e){
+            return getDouble();
+        }
     }
 
 }
